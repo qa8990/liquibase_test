@@ -34,3 +34,14 @@ jobs:
         run: |          
           java -version
 #          liquibase --version
+        
+      - name: Instalar liquibase
+        run: |          
+          wget -O liquibase.tar.gz https://github.com/liquibase/liquibase/releases/download/v4.19.0/liquibase-4.19.0.tar.gz
+          tar -xvzf liquibase.tar.gz
+          rm liquibase.tar.gz
+          mv liquibase /usr/local/bin/
+          chmod +x /usr/local/bin/liquibase
+          mkdir -p /usr/local/bin/internal/lib/
+          mv /home/runner/work/DB-LiquiBase/DB-LiquiBase/internal/lib/liquibase-core.jar /usr/local/bin/internal/lib/
+          

@@ -32,11 +32,16 @@ jobs:
 
       - name: Install Liquibase
         run: |
-
-          wget -O liquibase.tar.gz https://github.com/liquibase/liquibase/releases/download/v4.19.0/liquibase-4.19.0.tar.gz
-          tar -xvzf liquibase.tar.gz
+          apt update && apt install
+          mkdir -p /liquibase/bin && cd /liquibase
+          wget -O /liquibase/liquibase.tar.gz https://github.com/liquibase/liquibase/releases/download/v4.19.0/liquibase-4.19.0.tar.gz
+          tar -xvzf liquibase.tar.gz -d bin
           rm liquibase.tar.gz
-          mv liquibase /usr/local/bin/
-          chmod +x /usr/local/bin/liquibase
+          chmod u+x /liquibase
+          export LIQUIBASE_HOME=/liquibase
+          export PATH=/liquibase:$PATH
+          
+      - name: Listar Versiones
+        run: |          
           java -version
           liquibase --version

@@ -37,7 +37,7 @@ jobs:
           wget -O /liquibase/liquibase.tar.gz https://github.com/liquibase/liquibase/releases/download/v4.19.0/liquibase-4.19.0.tar.gz
           tar -xvzf liquibase.tar.gz -d bin
           rm liquibase.tar.gz
-          mv liquibase /usr/local/bin/
+          chmod u+x /liquibase
           export LIQUIBASE_HOME=/liquibase
           export PATH=/liquibase:$PATH
           java -version

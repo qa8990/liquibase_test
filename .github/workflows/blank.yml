@@ -50,5 +50,5 @@ jobs:
         run: |      
           cd /liquibase/
           ls -l
-#          liquibase --version
+          liquibase --version
           

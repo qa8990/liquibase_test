@@ -47,6 +47,7 @@ jobs:
 #          /liquibase/bin/lpm update
 #          tar -xvzf liquibase.tar.gz
       - name: Listar Versiones de liquibase
-        run: |          
+        run: |      
+          cd /liquibase/bin/
           liquibase --version
           

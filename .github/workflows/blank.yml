@@ -49,5 +49,6 @@ jobs:
       - name: Listar Versiones de liquibase
         run: |      
           cd /liquibase/bin/
+          ls -l
           liquibase --version
           

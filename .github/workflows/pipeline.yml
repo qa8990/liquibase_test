@@ -40,7 +40,8 @@ jobs:
           chmod u+x /liquibase
           export LIQUIBASE_HOME=/liquibase
           export PATH=/liquibase:$PATH
-          echo "Version de Java !" 
+          
+      - name: Listar Versiones
+        run: |          
           java -version
-          echo "Version de Liquibase !!"
           liquibase --version

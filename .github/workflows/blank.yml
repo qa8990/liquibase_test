@@ -33,10 +33,10 @@ jobs:
       - name: Install Liquibase
         run: |
           apt update && apt install
-          mkdir -p /liquibase/bin && cd /liquibase
-          wget -O /liquibase/liquibase.tar.gz https://github.com/liquibase/liquibase/releases/download/v4.19.0/liquibase-4.19.0.tar.gz
-          tar -xvzf liquibase.tar.gz -d bin
-          rm liquibase.tar.gz
+          sudo mkdir -p /liquibase/bin && cd /liquibase
+          sudo wget -O /liquibase/liquibase.tar.gz https://github.com/liquibase/liquibase/releases/download/v4.19.0/liquibase-4.19.0.tar.gz
+          sudo tar -xvzf liquibase.tar.gz -d bin
+          sudo rm liquibase.tar.gz
           chmod u+x /liquibase
           export LIQUIBASE_HOME=/liquibase
           export PATH=/liquibase:$PATH

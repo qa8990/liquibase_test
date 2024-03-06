@@ -48,7 +48,7 @@ jobs:
 #          tar -xvzf liquibase.tar.gz
       - name: Listar Versiones de liquibase
         run: |      
-          cd /liquibase/bin/
+          cd /liquibase/
           ls -l
-          liquibase --version
+#          liquibase --version
           

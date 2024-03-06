@@ -36,14 +36,15 @@ jobs:
 #          liquibase --version
         
       - name: Instalar liquibase
-        run: |          
-          wget -O liquibase.tar.gz https://github.com/liquibase/liquibase/releases/download/v4.19.0/liquibase-4.19.0.tar.gz
-          tar -xvzf liquibase.tar.gz
-          rm liquibase.tar.gz
-          mv liquibase /usr/local/bin/
-          chmod +x /usr/local/bin/liquibase
-          mkdir -p /usr/local/bin/internal/lib/
-
+        run: |         
+          sudo mkdir -p /liquibase/bin && cd /liquibase
+          wget -O /liquibase/liquibase.tar.gz https://github.com/liquibase/liquibase/releases/download/v4.19.0/liquibase-4.19.0.tar.gz
+          wget -q -O /liquibase/lpm.zip "https://github.com/liquibase/liquibase-package-manager/releases/download/v0.2.4/lpm-0.2.4-linux.zip"
+          tar -xzpf liquibase.tar.gz && unzip lpm.zip -d bin
+          export LIQUIBASE_HOME=/liquibase
+          export PATH=/liquibase:$PATH
+          /liquibase/bin/lpm update
+#          tar -xvzf liquibase.tar.gz
       - name: Listar Versiones 2
         run: |          
           liquibase --version

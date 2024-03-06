@@ -43,5 +43,8 @@ jobs:
           mv liquibase /usr/local/bin/
           chmod +x /usr/local/bin/liquibase
           mkdir -p /usr/local/bin/internal/lib/
-          mv /home/runner/work/DB-LiquiBase/DB-LiquiBase/internal/lib/liquibase-core.jar /usr/local/bin/internal/lib/
+
+      - name: Listar Versiones 2
+        run: |          
+          liquibase --version
           

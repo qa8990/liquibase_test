@@ -46,7 +46,7 @@ jobs:
           export PATH=/liquibase:$PATH
 #          /liquibase/bin/lpm update
 #          tar -xvzf liquibase.tar.gz
-      - name: Listar Versiones 2
+      - name: Listar Versiones de liquibase
         run: |          
           liquibase --version
           

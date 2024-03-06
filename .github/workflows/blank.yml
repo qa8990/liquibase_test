@@ -38,6 +38,8 @@ jobs:
       - name: Instalar liquibase
         run: |         
           sudo mkdir -p /liquibase/bin && cd /liquibase
+          chmod u+x /liquibase
+          chmod u+x /liquibase/bin
           sudo wget -O /liquibase/liquibase.tar.gz https://github.com/liquibase/liquibase/releases/download/v4.19.0/liquibase-4.19.0.tar.gz
           sudo wget -q -O /liquibase/lpm.zip "https://github.com/liquibase/liquibase-package-manager/releases/download/v0.2.4/lpm-0.2.4-linux.zip"
           tar -xzpf liquibase.tar.gz && unzip lpm.zip -d bin

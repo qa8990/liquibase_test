@@ -60,5 +60,6 @@ jobs:
             fi
         
       - name: Copiar changelog base
-        run: cp /base/db/changelog/changelog.sql /dev/db/chagelog/$(date +"%Y")/$(date +"%m")/$(date +"%Y%m%d%H%M%S").sql 
+        run: sudo cp /base/db/changelog/changelog.sql /dev/db/chagelog/$(date +"%Y")/$(date +"%m")/$(date +"%Y%m%d%H%M%S").sql 
+
           

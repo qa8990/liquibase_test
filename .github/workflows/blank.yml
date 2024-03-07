@@ -52,14 +52,19 @@ jobs:
           
       - name: Check if Directory Exists
         run: | 
-            if test -d "/dev/db/chagelog/$(date +'%Y')/$(date +'%m')"; then
-              echo "The folder exists!"
+            YEAR=$(date +'%Y')
+            MONTH=$(date +'%m')
+            FOLDER="/dev/db/changelog/$YEAR/$MONTH"
+            if [ ! -d "$FOLDER" ]; then
+              echo "Creating folder $FOLDER"
+              mkdir -p "$FOLDER"
+              touch "$FOLDER/empty_file.txt"
             else
-              echo "The folder does not exist."
-              sudo mkdir -p /dev/db/chagelog/$(date +"%Y")/$(date +"%m")
+              echo "Folder $FOLDER already exists"
             fi
-        
+# sudo mkdir -p /dev/db/chagelog/$(date +"%Y")/$(date +"%m") || touch         
+
       - name: Copiar changelog base
-        run: sudo cp /base/db/changelog/changelog.sql /dev/db/chagelog/$(date +"%Y")/$(date +"%m")/$(date +"%Y%m%d%H%M%S").sql 
+        run: sudo cp base/db/changelog/changelog.sql dev/db/chagelog/$(date +"%Y")/$(date +"%m")/$(date +"%Y%m%d%H%M%S").sql 
 
           

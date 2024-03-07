@@ -51,7 +51,13 @@ jobs:
           /liquibase/liquibase --version
           
       - name: Check if Directory Exists
-        run: test -d /dev/db/changelog/$(date +"%Y")/$(date +"%m") || mkdir -p /dev/db/chagelog/$(date +"%Y")/$(date +"%m")
+        run: | 
+            if test -d "/dev/$(date +'%Y')/$(date +'%m')"; then
+              echo "The folder exists!"
+            else
+              echo "The folder does not exist."
+              mkdir -p /dev/db/chagelog/$(date +"%Y")/$(date +"%m")
+          
         
       - name: Copiar changelog base
         run: cp /base/db/changelog/changelog.sql /dev/db/chagelog/$(date +"%Y")/$(date +"%m")/$(date +"%Y%m%d%H%M%S").sql 

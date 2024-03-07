@@ -68,6 +68,8 @@ jobs:
 
       - name: Push changes
         run: |
+          git config user.email "qa8990.services@gmail.com"
+          git config user.name "QA Services"
           git add -A
           git commit -m "Added files"
 #      - name: Renombrar changelog base

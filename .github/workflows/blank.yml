@@ -65,7 +65,11 @@ jobs:
 
       - name: Run bash script
         run: bash .github/workflows/handling_file.sh 
-         
+
+      - name: Push changes
+        run: |
+          git add -A
+          git commit -m "Added files"
 #      - name: Renombrar changelog base
 #        run: sudo mv dev/db/changelog/changelog.sql dev/db/changelog/changelog_$(date +'%Y%m%d%H%M%S').sql
         

@@ -64,11 +64,14 @@ jobs:
 #            fi
 # sudo mkdir -p /dev/db/chagelog/$(date +"%Y")/$(date +"%m") || touch         
 
-      - name: Renombrar changelog base
-        run: sudo mv dev/db/changelog/changelog.sql dev/db/changelog/changelog_$(date +'%Y%m%d%H%M%S').sql
+      - name: Run bash script
+        run: bash handling_file.sh 
+         
+#      - name: Renombrar changelog base
+#        run: sudo mv dev/db/changelog/changelog.sql dev/db/changelog/changelog_$(date +'%Y%m%d%H%M%S').sql
         
-      - name: Copiar changelog base
-        run: sudo mv dev/db/changelog/changelog_*.sql "dev/db/changelog/$YEAR/$MONTH/"
+#      - name: Copiar changelog base
+#        run: sudo mv dev/db/changelog/changelog_*.sql "dev/db/changelog/$YEAR/$MONTH/"
 #        cp dev/db/changelog/changelog.sql "dev/db/changelog/$YEAR/$MONTH/changelog_&TIMESTAMP.sql"
 
-          
+        

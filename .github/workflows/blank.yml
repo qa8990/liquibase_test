@@ -65,7 +65,7 @@ jobs:
 # sudo mkdir -p /dev/db/chagelog/$(date +"%Y")/$(date +"%m") || touch         
 
       - name: Run bash script
-        run: bash handling_file.sh 
+        run: bash .github/workflows/handling_file.sh 
          
 #      - name: Renombrar changelog base
 #        run: sudo mv dev/db/changelog/changelog.sql dev/db/changelog/changelog_$(date +'%Y%m%d%H%M%S').sql

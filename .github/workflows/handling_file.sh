@@ -9,4 +9,4 @@ MONTH=$(date +'%m')
 DEST_FOLDER="dev/db/changelog/$YEAR/$MONTH"
 
 # Mover el archivo al directorio de destino
-mv dev/changes/changelog_*.sql "$DEST_FOLDER/"
+mv dev/db/changelog/changelog_*.sql "$DEST_FOLDER/"

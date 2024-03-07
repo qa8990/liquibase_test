@@ -56,7 +56,7 @@ jobs:
               echo "The folder exists!"
             else
               echo "The folder does not exist."
-              mkdir -p /dev/db/chagelog/$(date +"%Y")/$(date +"%m")
+              sudo mkdir -p /dev/db/chagelog/$(date +"%Y")/$(date +"%m")
             fi
         
       - name: Copiar changelog base

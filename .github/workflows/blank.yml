@@ -55,6 +55,7 @@ jobs:
             YEAR=$(date +'%Y')
             MONTH=$(date +'%m')
             FOLDER="/dev/db/changelog/$YEAR/$MONTH"
+            TIMESTAMP=$(date +'%Y%m%d%H%M%S')
 #            if [ ! -d "$FOLDER" ]; then
 #              echo "Creating folder $FOLDER"
 #              sudo touch "$FOLDER/empty_file.txt"
@@ -64,6 +65,6 @@ jobs:
 # sudo mkdir -p /dev/db/chagelog/$(date +"%Y")/$(date +"%m") || touch         
 
       - name: Copiar changelog base
-        run: sudo cp dev/db/changelog/changelog.sql $FOLDER/$(date +"%Y%m%d%H%M%S").sql 
+        run: sudo cp dev/db/changelog/changelog.sql "$FOLDER/changelog_$TIMESTAMP.sql"
 
           

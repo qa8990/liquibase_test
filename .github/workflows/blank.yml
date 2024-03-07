@@ -48,7 +48,7 @@ jobs:
 #          tar -xvzf liquibase.tar.gz
       - name: Listar Versiones de liquibase
         run: |      
-          liquibase/liquibase --version
+          /liquibase/liquibase --version
           
       - name: Check if Directory Exists
         run: test -d /dev/db/changelog/$(date +"%Y")/$(date +"%m") || mkdir -p /dev/db/chagelog/$(date +"%Y")/$(date +"%m")

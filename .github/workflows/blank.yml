@@ -57,7 +57,7 @@ jobs:
             FOLDER="/dev/db/changelog/$YEAR/$MONTH"
             if [ ! -d "$FOLDER" ]; then
               echo "Creating folder $FOLDER"
-              sudo mkdir -p "$FOLDER"  ||  sudo touch "$FOLDER/empty_file.txt"
+              sudo touch "$FOLDER/empty_file.txt"
             else
               echo "Folder $FOLDER already exists"
             fi
